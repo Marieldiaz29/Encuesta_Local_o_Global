@@ -73,7 +73,8 @@
     </fieldset>
     <div class="acciones">
       <button type="submit" id="btnEnviar">Enviar respuesta</button>
-      <button type="button" id="btnReporte">Generar reporte</button>
+      <button type="button" style="background:#1565c0" onclick="(async()=>{const u='https://hook.eu1.make.com/cvv77y9pjau5vpjog4ewkphno67v5d8q',o={comida:['Mercado o tianguis','Tienda de barrio','Supermercado','En línea'],ropa:['Negocio local','Tienda departamental','App internacional','Segunda mano'],apps:['Nunca','Una vez al mes','Varias veces al mes','Cada semana'],criterio:['Precio','Calidad','Cercanía','Apoyar lo local','Marca'],origen:['Sí','A veces','No'],edad:['Menos de 18','18 a 29','30 a 49','50 o más']},e=a=>a[Math.floor(Math.random()*a.length)];this.disabled=true;for(let i=1;i<=20;i++){this.textContent='Enviando '+i+'/20...';await fetch(u,{method:'POST',body:new URLSearchParams({accion:'respuesta',comida:e(o.comida),ropa:e(o.ropa),apps:e(o.apps),criterio:e(o.criterio),origen:e(o.origen),edad:e(o.edad)})});await new Promise(r=>setTimeout(r,400))}this.textContent='¡20 enviadas!';})()">Llenar 20 automático</button>
+
     </div>
   </form>
   <div id="estado" role="status" aria-live="polite"></div>
